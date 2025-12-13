@@ -2,18 +2,18 @@
 import { auth, db } from '../../firebase-config.js';
 
 // Import Firebase authentication functions
-import { 
-    createUserWithEmailAndPassword, 
+import {
+    createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     sendEmailVerification,
     onAuthStateChanged
 } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 
 // Import Firestore functions
-import { 
-    doc, 
+import {
+    doc,
     setDoc,
-    serverTimestamp 
+    serverTimestamp
 } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
 console.log('index.js loaded');
@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const authModeRadios = document.querySelectorAll('input[name="auth_mode"]');
     const formTitle = document.querySelector('.text-center h2');
     const formSubtitle = document.querySelector('.text-center p');
-    
+
     // Get all buttons - there are 2: password toggle and submit
     const allButtons = document.querySelectorAll('form button[type="button"]');
     const passwordToggleBtn = allButtons[0]; // First button (in password field)
     const submitBtn = allButtons[1]; // Second button (Create Account)
-    
+
     // Input fields
     const fullNameInput = document.querySelector('input[placeholder="John Doe"]');
     const uidInput = document.querySelector('input[placeholder="2024001"]');
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearSelect = document.querySelectorAll('select')[1];
     const emailInput = document.querySelector('input[type="email"]');
     const passwordInput = document.querySelector('input[type="password"]');
-    
+
     // Signup field containers (to hide/show)
     const signupRow1 = fullNameInput.closest('.grid');
     const signupRow2 = branchSelect.closest('.grid');
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         passwordVisible = !passwordVisible;
         passwordInput.type = passwordVisible ? 'text' : 'password';
-        passwordToggleBtn.querySelector('.material-symbols-outlined').textContent = 
+        passwordToggleBtn.querySelector('.material-symbols-outlined').textContent =
             passwordVisible ? 'visibility' : 'visibility_off';
     });
 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.addEventListener('click', async (e) => {
         e.preventDefault();
         console.log('Submit clicked. Mode:', isSignupMode ? 'Signup' : 'Login');
-        
+
         if (isSignupMode) {
             await handleSignup();
         } else {
@@ -184,8 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
             await sendEmailVerification(user);
             console.log('Verification email sent');
 
-            showNotification('Account created! Please check your email to verify.', 'success');
-
+            showNotification(
+                'Account created! Please verify your email, then log in.',
+                'success'
+            );
             // Clear form
             fullNameInput.value = '';
             uidInput.value = '';
@@ -195,9 +197,17 @@ document.addEventListener('DOMContentLoaded', () => {
             passwordInput.value = '';
 
             // Redirect to dashboard after 2 seconds
-            setTimeout(() => {
-                window.location.href = 'dashboard.html';
-            }, 2000);
+            // setTimeout(() => {
+            //     window.location.href = 'dashboard.html';
+            // }, 2000);
+            // IMPORTANT: Sign out user immediately
+            await auth.signOut();
+
+            
+
+            // Switch to Login tab
+            isSignupMode = false;
+            updateFormMode();
 
         } catch (error) {
             console.error('Signup error:', error);
