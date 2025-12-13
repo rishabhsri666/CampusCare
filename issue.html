@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CampusCare - Report Issue</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@300..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white transition-colors duration-200">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Navigation -->
+        <header
+            class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-3 md:px-10">
+            <div class="flex items-center gap-4">
+                <div class="size-8 flex items-center justify-center rounded-lg bg-primary/10">
+                <span class="material-symbols-outlined text-primary text-2xl">school</span>
+            </div>
+                <h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">CampusCare
+                </h2>
+            </div>
+            <div class="flex flex-1 justify-end gap-8">
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                        href="#">Home</a>
+                    <a class="text-slate-900 dark:text-white text-sm font-bold border-b-2 border-primary pb-0.5"
+                        href="#">Report Issue</a>
+                    <a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                        href="#">My Reports</a>
+                </nav>
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-slate-100 dark:border-slate-700"
+                    data-alt="User profile picture placeholder"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZHkUZaEL483FO3eZ7qOsIHEkb6Mnm8G8dvKfnceBZSczQNFmWvjGhpOhOCwg7AekqFU3jDnpDpmHnaVUkcb48TDAlalbyRY0mTzbAiYQhzKpeZshoOOKdbQvV1_iSUo2GhAQ9yeIat4YNW9K3xTDIsnHqcSaj7gYswLV9tcKDpiNhU-G8BFK-mVEDgxq0o3-u3Ln35YM2XcsaxX3l4UH4e0guIeW4kkDjAG1dlSq5vYpfKNhS2QiWXc7yBiWpemJNq6d2xavytvyJ");'>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="layout-container flex h-full grow flex-col py-8 px-4 md:px-8 lg:px-20 xl:px-40">
+            <div class="flex flex-col lg:flex-row gap-8 max-w-[1200px] mx-auto w-full">
+                <!-- Left Column: Form -->
+                <div class="flex-1 flex flex-col gap-6">
+                    <!-- Heading -->
+                    <div class="flex flex-col gap-2">
+                        <h1
+                            class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-tight">
+                            Report a Campus Issue</h1>
+                        <p class="text-slate-500 dark:text-slate-400 text-base md:text-lg font-normal leading-normal">
+                            Please provide details below so our maintenance team can address the problem quickly.</p>
+                    </div>
+                    <!-- Safety Alert (Static for design) -->
+                    <div
+                        class="bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-500 p-4 rounded-r-lg flex items-start gap-3">
+                        <span class="material-symbols-outlined text-amber-600 dark:text-amber-500 mt-0.5">warning</span>
+                        <div>
+                            <p class="font-bold text-amber-800 dark:text-amber-400 text-sm">Is this a life-threatening
+                                emergency?</p>
+                            <p class="text-amber-700 dark:text-amber-300 text-sm mt-1">Do not use this form for fires,
+                                medical emergencies, or active crimes. Call Campus Safety immediately at
+                                <strong>555-0199</strong>.</p>
+                        </div>
+                    </div>
+                    <!-- Form Card -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+                        <div class="p-6 md:p-8 flex flex-col gap-6">
+                            <!-- Issue Type -->
+                            <div class="flex flex-col gap-2">
+                                <label class="text-slate-900 dark:text-slate-200 text-sm font-semibold">Issue
+                                    Category</label>
+                                <div class="relative">
+                                    <select
+                                        class="w-full appearance-none rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 px-4 py-3.5 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary transition-shadow outline-none pr-10">
+                                        <option disabled="" selected="" value="">Select an issue type</option>
+                                        <option value="electrical">Electrical (Lights, Power)</option>
+                                        <option value="plumbing">Plumbing (Leaks, Water)</option>
+                                        <option value="hvac">HVAC (AC, Heating)</option>
+                                        <option value="cleaning">Cleanliness / Janitorial</option>
+                                        <option value="safety">Safety Hazard</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div
+                                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
+                                        <span class="material-symbols-outlined">expand_more</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Location Group -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-slate-900 dark:text-slate-200 text-sm font-semibold">Building
+                                        Name / Block</label>
+                                    <div class="relative">
+                                        <input
+                                            class="w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 px-4 py-3.5 pl-11 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-shadow"
+                                            placeholder="e.g. Science Hall" type="text" />
+                                        <div
+                                            class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-3 text-slate-400">
+                                            <span class="material-symbols-outlined text-[20px]">apartment</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-slate-900 dark:text-slate-200 text-sm font-semibold">Block
+                                        / Room Number</label>
+                                    <div class="relative">
+                                        <input
+                                            class="w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 px-4 py-3.5 pl-11 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-shadow"
+                                            placeholder="e.g. B402" type="text" />
+                                        <div
+                                            class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-3 text-slate-400">
+                                            <span class="material-symbols-outlined text-[20px]">meeting_room</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Detailed Description -->
+                            <div class="flex flex-col gap-2">
+                                <label class="text-slate-900 dark:text-slate-200 text-sm font-semibold">Detailed
+                                    Description</label>
+                                <textarea
+                                    class="w-full min-h-[140px] rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-y transition-shadow"
+                                    placeholder="Describe the issue in detail (e.g., The AC unit in the back corner of the lab is leaking water onto the carpet...)"></textarea>
+                            </div>
+                            <!-- Image Upload -->
+                            <div class="flex flex-col gap-2">
+                                <label class="text-slate-900 dark:text-slate-200 text-sm font-semibold">Upload Evidence
+                                    (Optional)</label>
+                                <div
+                                    class="group relative flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl bg-slate-50 dark:bg-slate-900/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <div
+                                            class="bg-primary/10 p-3 rounded-full mb-3 group-hover:scale-110 transition-transform duration-200">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-3xl">cloud_upload</span>
+                                        </div>
+                                        <p class="mb-1 text-sm text-slate-500 dark:text-slate-400"><span
+                                                class="font-semibold text-primary">Click to upload</span> or drag and
+                                            drop</p>
+                                        <p class="text-xs text-slate-400 dark:text-slate-500">SVG, PNG, JPG or GIF (MAX.
+                                            5MB)</p>
+                                    </div>
+                                    <input class="hidden" type="file" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer Actions -->
+                        <div
+                            class="bg-slate-50 dark:bg-slate-900/50 px-6 py-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200 dark:border-slate-700">
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">By submitting, you agree to our <a
+                                    class="underline hover:text-primary" href="#">terms of service</a>.</p>
+                            <button
+                                class="w-full sm:w-auto bg-primary hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
+                                <span>Submit Report</span>
+                                <span class="material-symbols-outlined text-[20px]">send</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column: Sidebar -->
+                <div class="w-full lg:w-80 flex flex-col gap-6">
+                    <!-- Emergency Contact Card -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+                        <div
+                            class="bg-red-50 dark:bg-red-900/20 px-6 py-4 border-b border-red-100 dark:border-red-900/30">
+                            <div class="flex items-center gap-2 text-red-700 dark:text-red-400 font-bold">
+                                <span class="material-symbols-outlined">emergency_share</span>
+                                <h3>Safety Contacts</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center shrink-0">
+                                    <span
+                                        class="material-symbols-outlined text-slate-600 dark:text-slate-300 text-sm">local_fire_department</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-slate-900 dark:text-white">Campus Security</p>
+                                    <a class="text-lg font-bold text-primary hover:underline"
+                                        href="tel:555-0199">555-0199</a>
+                                    <p class="text-xs text-slate-500">Available 24/7</p>
+                                </div>
+                            </div>
+                            <div class="w-full h-px bg-slate-100 dark:bg-slate-700"></div>
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center shrink-0">
+                                    <span
+                                        class="material-symbols-outlined text-slate-600 dark:text-slate-300 text-sm">medical_services</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-slate-900 dark:text-white">Health Center</p>
+                                    <a class="text-lg font-bold text-primary hover:underline"
+                                        href="tel:555-0123">555-0123</a>
+                                    <p class="text-xs text-slate-500">Mon-Fri, 8am - 8pm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Helpful Tips -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">lightbulb</span>
+                            Quick Tips
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span
+                                    class="material-symbols-outlined text-green-500 text-[20px] shrink-0">check_circle</span>
+                                <span>Be specific about the location (e.g., "3rd floor men's restroom").</span>
+                            </li>
+                            <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span
+                                    class="material-symbols-outlined text-green-500 text-[20px] shrink-0">check_circle</span>
+                                <span>Take a photo if it's safe to do so. It helps us identify parts needed.</span>
+                            </li>
+                            <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span
+                                    class="material-symbols-outlined text-green-500 text-[20px] shrink-0">check_circle</span>
+                                <span>Check "My Reports" to track the status of your submission.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Campus Map Preview -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-1 overflow-hidden">
+                        <div class="relative w-full h-48 bg-slate-200 rounded-lg overflow-hidden group cursor-pointer">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Map of university campus showing buildings and roads"
+                                data-location="University Campus Map"
+                                style="background-image: url('https://placeholder.pics/svg/300');"></div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                                <div class="text-white">
+                                    <p class="font-bold text-sm">View Campus Map</p>
+                                    <p class="text-xs opacity-80">Find building codes &amp; zones</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="src/scripts/issue.js"></script>
+</body>
+
+</html>

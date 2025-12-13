@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CampusCare Student Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        /* Custom scrollbar for better aesthetic */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased overflow-hidden">
+    <div class="flex h-screen w-full overflow-hidden">
+        <!-- Sidebar -->
+        <aside
+            class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-[#15202b] flex flex-col justify-between hidden md:flex">
+            <div class="flex flex-col gap-4 p-4">
+                <div class="flex items-center gap-3 px-2 py-2">
+                    <div class="bg-primary/10 text-primary flex items-center justify-center rounded-lg size-10">
+                        <span class="material-symbols-outlined text-[24px]">school</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">CampusCare</h1>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs font-normal">Student Portal</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2 mt-4">
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-medium"
+                        href="#">
+                        <span class="material-symbols-outlined fill-1">dashboard</span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-medium"
+                        href="#">
+                        <span class="material-symbols-outlined">description</span>
+                        <span>My Reports</span>
+                    </a>
+                    <!-- <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-medium"
+                        href="#">
+                        <span class="material-symbols-outlined">person</span>
+                        <span>Profile</span>
+                    </a> -->
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-medium"
+                        href="#">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="p-4 border-t border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-10 rounded-full bg-cover bg-center" data-alt="Portrait of a male student"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIV79yNM31reXoUdGyo_xa77knrwgdteTaHPgjjADOSJkz-f6zrthW9za4rqAWd0y8tAFfWp6XL7M16UhUq6XgmZz1baVDdZhtbl0-7nNWmd7Y67yNwPqqW424rpq_lI20AYgQjhbn_9mTlzp4aAAUzvRdHm7vGHO4OFZ4JxfgcIYwMHD7YspgXfEOHiCJ_zJ209kCa_UXzWn-HnjabOtz6nkpGDb63dccM5J2u--LhEEPAUoKsFzpiYqa15tAVzgzkHVGxrenBH8m");'>
+                    </div>
+                    <div>
+                        <p class="sidebar-user-name text-sm font-semibold text-slate-900 dark:text-white">Loading...</p>
+
+                        <p class="sidebar-user-uid text-xs text-slate-500 dark:text-slate-400">Student ID: ...</p>
+
+                    </div>
+                </div>
+                <button
+                    class="logout-btn flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg h-10 px-4 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-bold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">logout</span>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col h-full overflow-y-auto bg-background-light dark:bg-background-dark relative">
+            <!-- Mobile Header (Visible only on small screens) -->
+            <div
+                class="md:hidden flex items-center justify-between p-4 bg-white dark:bg-[#15202b] border-b border-slate-200 dark:border-slate-800 sticky top-0 z-20">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">school</span>
+                    <span class="font-bold text-lg">CampusCare</span>
+                </div>
+                <button class="text-slate-600 dark:text-slate-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+            <div class="flex-1 max-w-[1200px] mx-auto w-full p-4 md:p-8 flex flex-col gap-6">
+                <!-- Page Heading -->
+                <div class="flex flex-wrap justify-between items-end gap-4">
+                    <div class="flex flex-col gap-1">
+                        <h1
+                            class="dashboard-welcome-name text-slate-900 dark:text-white text-3xl md:text-4xl font-black tracking-tight">
+                            Welcome back, student!
+                        </h1>
+
+                        <p class="dashboard-date text-slate-500 dark:text-slate-400 text-base font-normal">Tuesday,
+                            October 24th</p>
+                    </div>
+                    <button id="report-issue-btn"
+                        class="flex cursor-pointer items-center justify-center gap-2 rounded-lg h-11 px-5 bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-sm transition-colors shadow-blue-200 dark:shadow-none">
+                        <span class="material-symbols-outlined text-[20px]">add</span>
+                        <span>Report a New Issue</span>
+                    </button>
+                </div>
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div
+                        class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#15202b] shadow-sm border border-slate-100 dark:border-slate-800">
+                        <div class="flex justify-between items-start">
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Active Issues</p>
+                            <span
+                                class="material-symbols-outlined text-orange-500 bg-orange-50 dark:bg-orange-900/20 p-1.5 rounded-md text-[20px]">warning</span>
+                        </div>
+                        <p id="count-active" class="text-slate-900 dark:text-white text-3xl font-bold">2</p>
+                    </div>
+                    <div
+                        class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#15202b] shadow-sm border border-slate-100 dark:border-slate-800">
+                        <div class="flex justify-between items-start">
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Resolved Reports</p>
+                            <span
+                                class="material-symbols-outlined text-green-500 bg-green-50 dark:bg-green-900/20 p-1.5 rounded-md text-[20px]">check_circle</span>
+                        </div>
+                        <p id="count-resolved" class="text-slate-900 dark:text-white text-3xl font-bold">15</p>
+                    </div>
+                    <div
+                        class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#15202b] shadow-sm border border-slate-100 dark:border-slate-800">
+                        <div class="flex justify-between items-start">
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Pending Review</p>
+                            <span
+                                class="material-symbols-outlined text-purple-500 bg-purple-50 dark:bg-purple-900/20 p-1.5 rounded-md text-[20px]">hourglass_top</span>
+                        </div>
+                        <p id="count-pending" class="text-slate-900 dark:text-white text-3xl font-bold">1</p>
+                    </div>
+                </div>
+                <!-- Main Grid Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Left Column: Recent Activity (Spans 2 columns on large screens) -->
+                    <div class="lg:col-span-2 flex flex-col gap-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-slate-900 dark:text-white text-xl font-bold">Recent Activity</h2>
+                            <a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-[#15202b] rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr class="border-b border-slate-100 dark:border-slate-800">
+                                            <th
+                                                class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                                                Issue</th>
+                                            <th
+                                                class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                                                Location</th>
+                                            <th
+                                                class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                                                Date</th>
+                                            <th
+                                                class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                                                Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="recent-issues-body"
+                                        class="divide-y divide-slate-100 dark:divide-slate-800">
+                                        <!-- Issues will be inserted here dynamically -->
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Empty State Example (Hidden normally, here for completeness based on plan) -->
+                        <!-- 
+                        <div class="bg-white dark:bg-[#15202b] rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 p-8 flex flex-col items-center text-center">
+                            <img src="..." alt="Empty state illustration" class="w-32 h-32 mb-4 opacity-50">
+                            <h3 class="text-lg font-bold">No reports yet</h3>
+                            <p class="text-slate-500">Help keep our campus safe by reporting your first issue.</p>
+                        </div> 
+                        -->
+                    </div>
+                    <!-- Right Column: Widgets -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Quick Report Widget -->
+                        <div class="flex flex-col gap-3">
+                            <h2 class="text-slate-900 dark:text-white text-xl font-bold">Quick Report</h2>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button
+                                    class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-white dark:bg-[#15202b] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all group">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-yellow-500 group-hover:scale-110 transition-transform">bolt</span>
+                                    <span
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-200">Electricity</span>
+                                </button>
+                                <button
+                                    class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-white dark:bg-[#15202b] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all group">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-blue-500 group-hover:scale-110 transition-transform">water_drop</span>
+                                    <span
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-200">Plumbing</span>
+                                </button>
+                                <button
+                                    class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-white dark:bg-[#15202b] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all group">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-green-500 group-hover:scale-110 transition-transform">cleaning_services</span>
+                                    <span
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-200">Hygiene</span>
+                                </button>
+                                <button
+                                    class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-white dark:bg-[#15202b] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all group">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-red-500 group-hover:scale-110 transition-transform">shield</span>
+                                    <span
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-200">Security</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Alert Card -->
+                        <div class="flex flex-col gap-3">
+                            <h2 class="text-slate-900 dark:text-white text-xl font-bold">Announcements</h2>
+                            <div
+                                class="group relative overflow-hidden rounded-xl bg-white dark:bg-[#15202b] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
+                                <div class="w-full h-32 bg-cover bg-center"
+                                    data-alt="Abstract image representing maintenance work with tools and blueprints"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBUSHzEd9eUVFVUCJFLpvwzZol1PFSoPAWKTsApgdPv8SSAiiZ3WtG6j4dhDQtO4j69ngaZ0NGNAxcPdNbZuEsx9jzBy2BogYlVp4uMe2_0omN0iJBfTGIlXEVP-9EANCiDBwv4zZQMoWIBHftG1fJ5CxFD5McPkSzKnnU9gW9jlzrkAvU5FiOF-HaUvJeByMAH7EfO6WgmwRmveCpky3R6O2WYNhDRBENrMKSBpT61tRzQpaYKid04pw1MZIDnRAWHlyrVeI7B4Xd9");'>
+                                </div>
+                                <div class="p-4 flex flex-col gap-2">
+                                    <div class="flex items-start justify-between">
+                                        <p class="text-slate-900 dark:text-white text-base font-bold leading-tight">
+                                            Maintenance in Dorm B</p>
+                                        <span
+                                            class="bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wide">Alert</span>
+                                    </div>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-relaxed">
+                                        Planned electricity maintenance scheduled for this Saturday from 9 AM to 2 PM.
+                                        Please save your work.</p>
+                                    <button class="mt-2 text-primary text-sm font-bold self-start hover:underline">Read
+                                        More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="src/scripts/dashboard.js" defer></script>
+
+</body>
+
+</html>
