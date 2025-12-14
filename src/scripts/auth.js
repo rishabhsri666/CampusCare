@@ -202,9 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // }, 2000);
             // IMPORTANT: Sign out user immediately
             await auth.signOut();
-
-            
-
             // Switch to Login tab
             isSignupMode = false;
             updateFormMode();

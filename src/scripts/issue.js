@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('No user logged in, redirecting to login...');
             showNotification('Please login to report an issue', 'error');
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'auth.html';
             }, 1500);
             return;
         }

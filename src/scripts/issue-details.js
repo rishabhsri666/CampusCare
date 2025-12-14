@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check auth state
     onAuthStateChanged(auth, async (user) => {
         if (!user) {
-            window.location.href = '../index.html';
+            window.location.href = '../auth.html';
             return;
         }
 
@@ -514,7 +514,7 @@ function showNotification(message, type = 'info') {
 
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = "index.html";
+        window.location.href = "auth.html";
         return;
     }
     loadUserDashboard(user);

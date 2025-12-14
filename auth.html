@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CampusCare</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-white font-display min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-[#1a2632] px-6 md:px-10 py-3 sticky top-0 z-50">
+        <div class="flex items-center gap-4 text-primary">
+            <div class="size-8 flex items-center justify-center rounded-lg bg-primary/10">
+                <span class="material-symbols-outlined text-primary text-2xl">school</span>
+            </div>
+            <h2 onclick="window.location.href='index.html'" class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">CampusCare
+            </h2>
+        </div>
+        <div class="hidden md:flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+                <a class="text-[#0d141b] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                    href="index.html">Home</a>
+                <a class="text-[#0d141b] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                    href="#">About</a>
+                <a class="text-[#0d141b] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                    href="#">Contact Support</a>
+            </div>
+            <!-- <button
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/10 hover:bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+                <span class="truncate">Report Issue (Guest)</span>
+            </button> -->
+        </div>
+        <div class="md:hidden text-[#0d141b] dark:text-white cursor-pointer">
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-1 flex justify-center items-center p-4 md:p-8 relative overflow-hidden">
+        <!-- Abstract Background Pattern -->
+        <div class="absolute inset-0 z-0 pointer-events-none opacity-40">
+            <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl"></div>
+            <div
+                class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-blue-300/20 dark:bg-blue-900/20 rounded-full blur-3xl">
+            </div>
+        </div>
+        <div
+            class="w-full max-w-[1000px] grid grid-cols-1 md:grid-cols-2 gap-0 z-10 bg-white dark:bg-[#1a2632] rounded-2xl shadow-xl overflow-hidden min-h-[650px] border border-slate-100 dark:border-slate-800">
+            <!-- Left Side: Visual/Hero -->
+            <div class="hidden md:flex flex-col relative bg-primary text-white p-10 justify-between">
+                <!-- Hero Image with Overlay -->
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"
+                    data-alt="University campus walkway with students"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-primary/80 to-primary/90 mix-blend-multiply"></div>
+                <div class="relative z-10">
+                    <div
+                        class="size-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-8 shadow-inner border border-white/10">
+                        <span class="material-symbols-outlined text-3xl text-white">verified_user</span>
+                    </div>
+                    <h1 class="text-4xl font-bold leading-tight mb-4 text-white">Let's keep our campus better, together.
+                    </h1>
+                    <p class="text-blue-100 text-lg font-light leading-relaxed">Join the community to report issues,
+                        track status, and improve campus life efficiently.</p>
+                </div>
+                <div class="relative z-10 mt-auto">
+                    <div
+                        class="flex items-center gap-3 mb-2 p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/10">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full border-2 border-primary bg-slate-200 bg-[url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64')] bg-cover"
+                                data-alt="Student portrait female"></div>
+                            <div class="w-10 h-10 rounded-full border-2 border-primary bg-slate-200 bg-[url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64')] bg-cover"
+                                data-alt="Student portrait male"></div>
+                            <div class="w-10 h-10 rounded-full border-2 border-primary bg-slate-200 bg-[url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64')] bg-cover"
+                                data-alt="Student portrait male"></div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm font-bold text-white">2k+ Students</span>
+                            <span class="text-xs text-blue-100">Active on CampusCare</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Side: Form -->
+            <div class="flex flex-col p-8 md:p-12 justify-center h-full overflow-y-auto bg-white dark:bg-[#1a2632]">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-[#0d141b] dark:text-white mb-2">Create Student Account</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Enter your university details to get started
+                    </p>
+                </div>
+                <!-- Segmented Control -->
+                <div class="flex justify-center mb-8">
+                    <div class="flex w-full max-w-[320px] bg-slate-100 dark:bg-[#121c26] p-1.5 rounded-xl">
+                        <label class="flex-1 cursor-pointer text-center relative group">
+                            <input class="peer sr-only" name="auth_mode" type="radio" value="login" />
+                            <div
+                                class="py-2 text-sm font-medium text-slate-500 dark:text-slate-400 rounded-lg peer-checked:bg-white peer-checked:dark:bg-[#1e2a36] peer-checked:text-primary peer-checked:shadow-sm transition-all duration-200">
+                                Log In</div>
+                        </label>
+                        <label class="flex-1 cursor-pointer text-center relative group">
+                            <input checked="" class="peer sr-only" name="auth_mode" type="radio" value="signup" />
+                            <div
+                                class="py-2 text-sm font-medium text-slate-500 dark:text-slate-400 rounded-lg peer-checked:bg-white peer-checked:dark:bg-[#1e2a36] peer-checked:text-primary peer-checked:shadow-sm transition-all duration-200">
+                                Sign Up</div>
+                        </label>
+                    </div>
+                </div>
+                <!-- Form -->
+                <form class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">Full Name</label>
+                            <div class="relative group">
+                                <span
+                                    class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">person</span>
+                                <input
+                                    class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm dark:text-white"
+                                    placeholder="John Doe" type="text" />
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">University ID
+                                (UID)</label>
+                            <div class="relative group">
+                                <span
+                                    class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">badge</span>
+                                <input
+                                    class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm dark:text-white"
+                                    placeholder="2024001" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">Branch</label>
+                            <div class="relative group">
+                                <span
+                                    class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">school</span>
+                                <select
+                                    class="w-full pl-10 pr-8 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-slate-500 text-sm appearance-none dark:text-white cursor-pointer">
+                                    <option disabled="" selected="" value="">Select Branch</option>
+                                    <option value="cs">CS</option>
+                                    <option value="me">ME</option>
+                                    <option value="ee">ECE</option>
+                                    <option value="bt">EEE</option>
+                                    <option value="ce">Pharmacy</option>
+                                    <option value="bt">MBA</option>
+                                    <option value="bt">MCA</option>
+                                </select>
+                                <span
+                                    class="material-symbols-outlined absolute right-3 top-3 text-slate-400 text-[20px] pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">Year</label>
+                            <div class="relative group">
+                                <span
+                                    class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">calendar_today</span>
+                                <select
+                                    class="w-full pl-10 pr-8 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-slate-500 text-sm appearance-none dark:text-white cursor-pointer">
+                                    <option disabled="" selected="" value="">Select Year</option>
+                                    <option value="1">1st Year</option>
+                                    <option value="2">2nd Year</option>
+                                    <option value="3">3rd Year</option>
+                                    <option value="4">4th Year</option>
+                                </select>
+                                <span
+                                    class="material-symbols-outlined absolute right-3 top-3 text-slate-400 text-[20px] pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">College Email ID</label>
+                        <div class="relative group">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">mail</span>
+                            <input
+                                class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm dark:text-white"
+                                placeholder="student@kiet.edu" type="email" />
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">Password</label>
+                        <div class="relative group">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">lock</span>
+                            <input
+                                class="w-full pl-10 pr-10 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm dark:text-white"
+                                placeholder="Create a password" type="password" />
+                            <button
+                                class="absolute right-3 top-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+                                type="button">
+                                <span class="material-symbols-outlined text-[20px]">visibility_off</span>
+                            </button>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[14px]">info</span> Must be at least 8
+                            characters
+                        </p>
+                    </div>
+                    <div class="pt-2">
+                        <button
+                            class="group w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 transform active:scale-[0.98]"
+                            type="button">
+                            <span>Create Account</span>
+                            <span
+                                class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="src/scripts/auth.js"></script>
+</body>
+
+</html>

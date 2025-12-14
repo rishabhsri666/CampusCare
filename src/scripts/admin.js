@@ -8,6 +8,7 @@ import {
 import {
     collection,
     getDocs,
+    getDoc,
     query,
     where,
     updateDoc,
@@ -267,25 +268,54 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
     if (!user) {
-        window.location.href = "index.html";
+        window.location.href = "auth.html";
         return;
     }
-    loadUserDashboard(user);
+
+    try {
+        // Fetch user role from Firestore
+        const userRef = doc(db, "users", user.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (!userSnap.exists()) {
+            // No user record → treat as unauthorized
+            await signOut(auth);
+            window.location.href = "auth.html";
+            return;
+        }
+
+        const userData = userSnap.data();
+
+        // 🔒 ROLE CHECK
+        if (userData.role !== "admin") {
+            // Not an admin → block access
+            showNotification("Access denied. Admins only.", "error");
+            await signOut(auth);
+            window.location.href = "dashboard.html";
+            return;
+        }
+
+        // ✅ User is admin → load admin dashboard
+        loadIssues();
+
+    } catch (error) {
+        console.error("Admin access check failed:", error);
+        await signOut(auth);
+        window.location.href = "auth.html";
+    }
 });
+
 
 logoutButton.addEventListener("click", async () => {
     await signOut(auth);
-    window.location.href = "index.html";
+    window.location.href = "auth.html";
 });
 
 // Listeners
 searchInput.addEventListener("input", loadIssues);
 categoryFilter.addEventListener("change", loadIssues);
 sortFilter.addEventListener("change", loadIssues);
-
-// Initial load
-loadIssues();
 
 console.log('Admin dashboard initialized');

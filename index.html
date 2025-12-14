@@ -1,16 +1,21 @@
 <!DOCTYPE html>
+
 <html class="light" lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>CampusCare</title>
+    <title>CampusCare - Report Campus Issues</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <script id="tailwind-config">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -21,223 +26,231 @@
                         "background-dark": "#101922",
                     },
                     fontFamily: {
-                        "display": ["Lexend", "sans-serif"]
+                        "display": ["Inter", "sans-serif"]
                     },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
                 },
             },
         }
     </script>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-white font-display min-h-screen flex flex-col">
-    <!-- Navbar -->
-    <header
-        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-[#1a2632] px-6 md:px-10 py-3 sticky top-0 z-50">
-        <div class="flex items-center gap-4 text-primary">
-            <div class="size-8 flex items-center justify-center rounded-lg bg-primary/10">
-                <span class="material-symbols-outlined text-primary text-2xl">school</span>
-            </div>
-            <h2 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">CampusCare
-            </h2>
-        </div>
-        <div class="hidden md:flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-                <a class="text-[#0d141b] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
-                    href="#">Home</a>
-                <a class="text-[#0d141b] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
-                    href="#">About</a>
-                <a class="text-[#0d141b] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
-                    href="#">Contact Support</a>
-            </div>
-            <button
-                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/10 hover:bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
-                <span class="truncate">Report Issue (Guest)</span>
-            </button>
-        </div>
-        <div class="md:hidden text-[#0d141b] dark:text-white cursor-pointer">
-            <span class="material-symbols-outlined">menu</span>
-        </div>
-    </header>
-    <!-- Main Content -->
-    <main class="flex-1 flex justify-center items-center p-4 md:p-8 relative overflow-hidden">
-        <!-- Abstract Background Pattern -->
-        <div class="absolute inset-0 z-0 pointer-events-none opacity-40">
-            <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl"></div>
-            <div
-                class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-blue-300/20 dark:bg-blue-900/20 rounded-full blur-3xl">
-            </div>
-        </div>
-        <div
-            class="w-full max-w-[1000px] grid grid-cols-1 md:grid-cols-2 gap-0 z-10 bg-white dark:bg-[#1a2632] rounded-2xl shadow-xl overflow-hidden min-h-[650px] border border-slate-100 dark:border-slate-800">
-            <!-- Left Side: Visual/Hero -->
-            <div class="hidden md:flex flex-col relative bg-primary text-white p-10 justify-between">
-                <!-- Hero Image with Overlay -->
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"
-                    data-alt="University campus walkway with students"></div>
-                <div class="absolute inset-0 bg-gradient-to-b from-primary/80 to-primary/90 mix-blend-multiply"></div>
-                <div class="relative z-10">
-                    <div
-                        class="size-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-8 shadow-inner border border-white/10">
-                        <span class="material-symbols-outlined text-3xl text-white">verified_user</span>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-white overflow-x-hidden">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <!-- Navbar -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-[#e7edf3] dark:border-[#2a3b4c] bg-white/80 dark:bg-[#101922]/80 backdrop-blur-md">
+            <div class="layout-container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-8">
+                <div class="flex items-center gap-2 text-primary dark:text-white">
+                    <div class="bg-primary/10 text-primary flex items-center justify-center rounded-lg size-10">
+                        <span class="material-symbols-outlined text-[24px]">school</span>
                     </div>
-                    <h1 class="text-4xl font-bold leading-tight mb-4 text-white">Let's keep our campus better, together.
-                    </h1>
-                    <p class="text-blue-100 text-lg font-light leading-relaxed">Join the community to report issues,
-                        track status, and improve campus life efficiently.</p>
+                    <h2 onclick="window.location.href='index.html'" class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">
+                        CampusCare</h2>
                 </div>
-                <div class="relative z-10 mt-auto">
-                    <div
-                        class="flex items-center gap-3 mb-2 p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/10">
-                        <div class="flex -space-x-3">
-                            <div class="w-10 h-10 rounded-full border-2 border-primary bg-slate-200 bg-[url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64')] bg-cover"
-                                data-alt="Student portrait female"></div>
-                            <div class="w-10 h-10 rounded-full border-2 border-primary bg-slate-200 bg-[url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64')] bg-cover"
-                                data-alt="Student portrait male"></div>
-                            <div class="w-10 h-10 rounded-full border-2 border-primary bg-slate-200 bg-[url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64')] bg-cover"
-                                data-alt="Student portrait male"></div>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="text-sm font-bold text-white">2k+ Students</span>
-                            <span class="text-xs text-blue-100">Active on CampusCare</span>
-                        </div>
-                    </div>
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <nav class="flex items-center gap-9">
+                        <a class="text-[#0d141b] dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                            href="index.html">Home</a>
+                        <a class="text-[#0d141b] dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                            href="#">How it Works</a>
+                        <a class="text-[#0d141b] dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                            href="#">Contact</a>
+                    </nav>
+                    <button onclick="window.location.href='auth.html'"
+                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                        <span class="truncate">Log In</span>
+                    </button>
                 </div>
+                <!-- Mobile Menu Icon -->
+                <button class="md:hidden p-2 text-gray-600 dark:text-gray-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
             </div>
-            <!-- Right Side: Form -->
-            <div class="flex flex-col p-8 md:p-12 justify-center h-full overflow-y-auto bg-white dark:bg-[#1a2632]">
-                <div class="text-center mb-8">
-                    <h2 class="text-2xl font-bold text-[#0d141b] dark:text-white mb-2">Create Student Account</h2>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm">Enter your university details to get started
-                    </p>
-                </div>
-                <!-- Segmented Control -->
-                <div class="flex justify-center mb-8">
-                    <div class="flex w-full max-w-[320px] bg-slate-100 dark:bg-[#121c26] p-1.5 rounded-xl">
-                        <label class="flex-1 cursor-pointer text-center relative group">
-                            <input class="peer sr-only" name="auth_mode" type="radio" value="login" />
-                            <div
-                                class="py-2 text-sm font-medium text-slate-500 dark:text-slate-400 rounded-lg peer-checked:bg-white peer-checked:dark:bg-[#1e2a36] peer-checked:text-primary peer-checked:shadow-sm transition-all duration-200">
-                                Log In</div>
-                        </label>
-                        <label class="flex-1 cursor-pointer text-center relative group">
-                            <input checked="" class="peer sr-only" name="auth_mode" type="radio" value="signup" />
-                            <div
-                                class="py-2 text-sm font-medium text-slate-500 dark:text-slate-400 rounded-lg peer-checked:bg-white peer-checked:dark:bg-[#1e2a36] peer-checked:text-primary peer-checked:shadow-sm transition-all duration-200">
-                                Sign Up</div>
-                        </label>
-                    </div>
-                </div>
-                <!-- Form -->
-                <form class="space-y-5">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div class="space-y-1.5">
-                            <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">Full Name</label>
-                            <div class="relative group">
-                                <span
-                                    class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">person</span>
-                                <input
-                                    class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm dark:text-white"
-                                    placeholder="John Doe" type="text" />
+        </header>
+        <main class="flex-1">
+            <!-- Hero Section -->
+            <section class="w-full px-4 py-12 md:py-20 lg:py-24 bg-white dark:bg-[#101922]">
+                <div class="mx-auto max-w-7xl">
+                    <div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex flex-col gap-4 text-left">
+                                <h1
+                                    class="text-[#0d141b] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl lg:text-6xl">
+                                    Keep CampusCare <span class="text-primary">Running Smoothly</span>
+                                </h1>
+                                <p
+                                    class="text-[#4c739a] dark:text-gray-400 text-lg font-normal leading-relaxed max-w-xl">
+                                    Spot a problem? Let us know, and we'll fix it. Quickly report electricity faults,
+                                    water leakage, cleanliness problems, and safety concerns directly from your device.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-4 mt-2">
+                                <button onclick="window.location.href='issue.html'"
+                                    class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 shadow-lg shadow-blue-500/30 transition-all text-white text-base font-bold leading-normal">
+                                    <span class="truncate">Report an Issue Now</span>
+                                </button>
+                                <button onclick="window.location.href='auth.html'"
+                                    class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white dark:bg-transparent border border-[#cfdbe7] dark:border-gray-600 hover:bg-[#f0f4f8] dark:hover:bg-gray-800 transition-colors text-[#0d141b] dark:text-white text-base font-bold leading-normal">
+                                    <span class="truncate">Sign Up / Log In</span>
+                                </button>
+                            </div>
+                            <!-- Trust Indicator -->
+                            <div class="flex items-center gap-3 pt-4">
+                                <div class="flex -space-x-2">
+                                    <img alt="Student portrait"
+                                        class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#101922] object-cover"
+                                        data-alt="Portrait of a smiling student"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeASDdZDvQhk8JrnSBHfwRaatmQkNi8pGaD-oEbeggnl6KG8m5e1svWhbGMiIxamWBEvjchlQln4bKzt2QiLXc0LbIOXIH9Argy9EdaE0dLhIEQTwRGsO63yM0srvFWl59IMHPczbu0b-emE09QwQ8CLo9JVHuaUtu3Lm5sxvBVCqzP6Myzh1j1M9ohHscSV42vrx24Ym78vCND6cKFepKz_6fiGapF5UeyDZcF__hcndj_BmN5RWRYAXVqy-pAsRl2zXaFJEdbRzM" />
+                                    <img alt="Student portrait"
+                                        class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#101922] object-cover"
+                                        data-alt="Portrait of a male student"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSqQQf34cXIW7FcBTWuKS-fRYeJagXMWsncqavwzFSUR-oEZdYWwAIBgLqCRmdkajQ5AKMnXrJcglss-ThIoUEjqJVQ2btxa5Kkr71lgdNhCJz3ECpkHgjdxvI8aLyDXKUM7Ww6J8EHe31WAqjtvbgYrWD4C-YEwHMpkDC5zBe2tAP3r_mAs3f2dYmkH-ABZ0V80RunrDzE8C83lSohgglSsisBC857p6oxaSCz-gZIchd21aFgx7Gfieu2965p9o_UA54E8uXqI8x" />
+                                    <img alt="Faculty portrait"
+                                        class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#101922] object-cover"
+                                        data-alt="Portrait of a faculty member"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb2JuCKJSmfXosN9rh1NoELmkrdtAuFvutQqsnsayUXXSbCcl-apzfOZNHaHQ1c7fQiA2KQc5484GDDXhjU5sBfQz_tS5Cd5dYlKyPqu_69pZCMhbzHLScrhvlnp5AO45ZRh47HB70tM87uyGOUueAxf3A5MUX0e042-fjiCbNmdmYmMc2KIKUGKtjt5wSAdx25d8gNOqRZFNpAPack-6QZ2o5hYrpyNrmX6UF2n5LjZwoKabQb4Z60TeULmHwtSV3-Ts9igk4q0fD" />
+                                </div>
+                                <p class="text-sm font-medium text-[#4c739a] dark:text-gray-400">Trusted by 10,000+
+                                    Students &amp; Faculty</p>
                             </div>
                         </div>
-                        <div class="space-y-1.5">
-                            <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">University ID
-                                (UID)</label>
-                            <div class="relative group">
-                                <span
-                                    class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">badge</span>
-                                <input
-                                    class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm dark:text-white"
-                                    placeholder="2024001" type="text" />
+                        <div
+                            class="relative w-full h-full min-h-[300px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                            <div class="absolute inset-0 bg-cover bg-center"
+                                data-alt="Students walking on a modern university campus"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbOs1uLCOqIvDf1u-XljxT7qCFH9RpKTzbbGq8Kdm9wQdG_odq_seErqo5eypUKOpjK5s10taE1iMqQ40c2KKZadPQu0aSC_D_J3b1XuNWHt9jILD0HVmlqQImgSSVTjpYETaH5xSVSDY8La5PRwMxnuEkFI5FR4of8grABCVLnQY0C2jXxHAPS8EQ0tWrvaYMiRT-Vw1Dy0Sr7uSdTIGMmXRxaNHmu6Kph2uGg3bfNVHE-WfLxBrpDzLJsIAy2xXQmHydEUERbZXY");'>
                             </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div class="space-y-1.5">
-                            <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">Branch</label>
-                            <div class="relative group">
-                                <span
-                                    class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">school</span>
-                                <select
-                                    class="w-full pl-10 pr-8 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-slate-500 text-sm appearance-none dark:text-white cursor-pointer">
-                                    <option disabled="" selected="" value="">Select Branch</option>
-                                    <option value="cs">CS</option>
-                                    <option value="me">ME</option>
-                                    <option value="ee">ECE</option>
-                                    <option value="bt">EEE</option>
-                                    <option value="ce">Pharmacy</option>
-                                    <option value="bt">MBA</option>
-                                    <option value="bt">MCA</option>
-                                </select>
-                                <span
-                                    class="material-symbols-outlined absolute right-3 top-3 text-slate-400 text-[20px] pointer-events-none">expand_more</span>
-                            </div>
+                </div>
+            </section>
+            <!-- Stats Ticker -->
+            <section class="border-y border-[#e7edf3] dark:border-[#2a3b4c] bg-[#f8fafc] dark:bg-[#15202b]">
+                <div class="mx-auto max-w-7xl px-4 py-8">
+                    <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-3xl font-black text-primary">12</span>
+                            <span class="text-sm font-medium text-[#4c739a] dark:text-gray-400">Issues Resolved
+                                Today</span>
                         </div>
-                        <div class="space-y-1.5">
-                            <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">Year</label>
-                            <div class="relative group">
-                                <span
-                                    class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">calendar_today</span>
-                                <select
-                                    class="w-full pl-10 pr-8 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-slate-500 text-sm appearance-none dark:text-white cursor-pointer">
-                                    <option disabled="" selected="" value="">Select Year</option>
-                                    <option value="1">1st Year</option>
-                                    <option value="2">2nd Year</option>
-                                    <option value="3">3rd Year</option>
-                                    <option value="4">4th Year</option>
-                                </select>
-                                <span
-                                    class="material-symbols-outlined absolute right-3 top-3 text-slate-400 text-[20px] pointer-events-none">expand_more</span>
-                            </div>
+                        <div class="w-px h-12 bg-[#e7edf3] dark:bg-[#2a3b4c] hidden md:block"></div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-3xl font-black text-primary">24/7</span>
+                            <span class="text-sm font-medium text-[#4c739a] dark:text-gray-400">Support Available</span>
+                        </div>
+                        <div class="w-px h-12 bg-[#e7edf3] dark:bg-[#2a3b4c] hidden md:block"></div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-3xl font-black text-primary">98%</span>
+                            <span class="text-sm font-medium text-[#4c739a] dark:text-gray-400">Satisfaction Rate</span>
                         </div>
                     </div>
-                    <div class="space-y-1.5">
-                        <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">College Email ID</label>
-                        <div class="relative group">
-                            <span
-                                class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">mail</span>
-                            <input
-                                class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm dark:text-white"
-                                placeholder="student@kiet.edu" type="email" />
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <label class="text-sm font-semibold text-[#0d141b] dark:text-slate-200">Password</label>
-                        <div class="relative group">
-                            <span
-                                class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">lock</span>
-                            <input
-                                class="w-full pl-10 pr-10 py-2.5 bg-slate-50 dark:bg-[#121c26] border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm dark:text-white"
-                                placeholder="Create a password" type="password" />
-                            <button
-                                class="absolute right-3 top-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
-                                type="button">
-                                <span class="material-symbols-outlined text-[20px]">visibility_off</span>
-                            </button>
-                        </div>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[14px]">info</span> Must be at least 8
-                            characters
+                </div>
+            </section>
+            <!-- Features Section -->
+            <section class="w-full px-4 py-16 bg-background-light dark:bg-background-dark">
+                <div class="mx-auto max-w-7xl flex flex-col gap-12">
+                    <div class="flex flex-col gap-4 text-center items-center">
+                        <h2
+                            class="text-[#0d141b] dark:text-white text-3xl font-bold leading-tight md:text-4xl max-w-3xl">
+                            Report issues in seconds
+                        </h2>
+                        <p class="text-[#4c739a] dark:text-gray-400 text-base font-normal leading-normal max-w-2xl">
+                            Select a category below to get started immediately. Our streamlined process ensures your
+                            report gets to the right maintenance team instantly.
                         </p>
                     </div>
-                    <div class="pt-2">
-                        <button
-                            class="group w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 transform active:scale-[0.98]"
-                            type="button">
-                            <span>Create Account</span>
-                            <span
-                                class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </button>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Card 1 -->
+                        <div
+                            class="group flex flex-col gap-4 rounded-xl border border-[#cfdbe7] dark:border-[#2a3b4c] bg-white dark:bg-[#15202b] p-6 hover:shadow-lg hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">bolt</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <h3 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">Electricity
+                                    Faults</h3>
+                                <p class="text-[#4c739a] dark:text-gray-400 text-sm font-normal leading-normal">Report
+                                    power outages, faulty wiring, or broken switches immediately.</p>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div
+                            class="group flex flex-col gap-4 rounded-xl border border-[#cfdbe7] dark:border-[#2a3b4c] bg-white dark:bg-[#15202b] p-6 hover:shadow-lg hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">water_drop</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <h3 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">Water Leakage
+                                </h3>
+                                <p class="text-[#4c739a] dark:text-gray-400 text-sm font-normal leading-normal">Notify
+                                    us about leaking pipes, dripping taps, or drainage issues.</p>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div
+                            class="group flex flex-col gap-4 rounded-xl border border-[#cfdbe7] dark:border-[#2a3b4c] bg-white dark:bg-[#15202b] p-6 hover:shadow-lg hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">cleaning_services</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <h3 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">Cleanliness
+                                </h3>
+                                <p class="text-[#4c739a] dark:text-gray-400 text-sm font-normal leading-normal">Flag
+                                    waste management issues, unkempt areas, or hygiene problems.</p>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div
+                            class="group flex flex-col gap-4 rounded-xl border border-[#cfdbe7] dark:border-[#2a3b4c] bg-white dark:bg-[#15202b] p-6 hover:shadow-lg hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">shield</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <h3 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">Safety
+                                    Concerns</h3>
+                                <p class="text-[#4c739a] dark:text-gray-400 text-sm font-normal leading-normal">Alert
+                                    security about potential safety hazards or suspicious activities.</p>
+                            </div>
+                        </div>
                     </div>
-                </form>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="border-t border-[#e7edf3] dark:border-[#2a3b4c] bg-white dark:bg-[#101922]">
+            <div class="mx-auto max-w-7xl px-4 py-10">
+                <div class="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
+                    <div class="flex items-center gap-2 text-[#0d141b] dark:text-white">
+                        <div class="bg-primary/10 text-primary flex items-center justify-center rounded-lg size-10">
+                        <span class="material-symbols-outlined text-[24px]">school</span>
+                    </div>
+                        <span onclick="window.location.href='index.html'" class="text-lg font-bold">CampusCare</span>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-8">
+                        <a class="text-[#4c739a] dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium"
+                            href="#">Support</a>
+                        <a class="text-[#4c739a] dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium"
+                            href="#">Privacy Policy</a>
+                        <a class="text-[#4c739a] dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium"
+                            href="#">Terms of Service</a>
+                    </div>
+                    <p class="text-[#9ca3af] dark:text-gray-500 text-sm font-normal">© 2025 CampusCare. All rights
+                        reserved.</p>
+                </div>
             </div>
-        </div>
-    </main>
-
-    <script type="module" src="firebase-config.js"></script>
-    <script type="module" src="src/scripts/index.js"></script>
+        </footer>
+    </div>
 </body>
 
 </html>

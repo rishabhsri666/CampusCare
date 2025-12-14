@@ -12,7 +12,8 @@ import {
     query,
     where,
     getDocs,
-    orderBy
+    orderBy,
+    limit
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 // DOM Elements
@@ -56,7 +57,7 @@ async function loadUserDashboard(user) {
     userNameSidebar.textContent = data.fullName;
     userUidSidebar.textContent = `Student ID: ${data.universityId}`;
 
-    userWelcomeHeading.textContent = `Welcome back, ${data.fullName.split(" ")[0]}!`;
+    userWelcomeHeading.textContent = `Welcome back, ${data.fullName.split(" ")[0]} !`;
     dashboardDateEl.textContent = new Date().toLocaleDateString(undefined, {
         weekday: "long",
         month: "long",
@@ -110,7 +111,8 @@ async function loadUserIssues(userId) {
     const q = query(
         issuesRef,
         where("reportedBy", "==", userId),
-        orderBy("createdAt", "desc")
+        orderBy("createdAt", "desc"), 
+        limit(5)
     );
 
     const snapshot = await getDocs(q);
@@ -210,5 +212,5 @@ reportIssueBtn.addEventListener("click", async () => {
 // ---------- Logout ----------
 logoutButton.addEventListener("click", async () => {
     await signOut(auth);
-    window.location.href = "index.html";
+    window.location.href = "auth.html";
 });
